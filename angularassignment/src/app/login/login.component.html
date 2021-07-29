@@ -1,0 +1,45 @@
+<div class="container-fluid bg-light ">
+    <div class="row">        
+        <div class="col-md-4 mx-auto my-5">
+            <div class="card shadow px-4 div-login">
+                <div class="card-body">
+                    <h2 class="text-center p-4"> Login</h2>
+                <form [formGroup]="login"  autocomplete="off" method="" >
+                    <div class="form-group p-3">
+                        <div class="input-group">
+                          <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user fa-2x"></i></span>
+                          </span>
+                          <input type="email" name="email" #e1 required id="email" formControlName="email" autocomplete="off" class="form-control input-sm rounded-0" placeholder="EMAIL" [ngClass]="{ 'is-invalid': submitted && login.controls.email.errors }">
+                        </div>
+                        <div *ngIf="submitted && login.controls.email.errors" class="text-danger">
+                            <div *ngIf="login.controls.email.errors.required">
+                              Email is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group p-3">
+                        <div class="input-group">
+                          <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock fa-2x"></i></span>
+                          </span>
+                          <input type="password" name="password" required #p2 formControlName="password" id="password" autocomplete="off" class="form-control input-sm  rounded-0" placeholder="PASSWORD" [ngClass]="{ 'is-invalid': submitted && login.controls.password.errors }">
+                          
+                        </div>
+                        <div *ngIf="submitted && login.controls.password.errors" class="text-danger">
+                          <div *ngIf="login.controls.password.errors.required">
+                            Password is required
+                          </div>
+                        </div>
+                      </div>
+                    <div class="text-center pb-4 pt-2"><button type="submit" class="btn btn-dark btn-block rounded-0" [disabled]="login.invalid"  (click)="check(e1.value, p2.value)">Log In</button></div>
+                    <span class="text-danger mt-1">{{msg}}</span>
+                    <div *ngIf="invalidlogin" class="error text-danger">
+                    <div>Incorrect email or password. </div>
+                    </div>
+                </form>
+                </div>
+            </div>          
+        </div>
+    </div>
+</div>

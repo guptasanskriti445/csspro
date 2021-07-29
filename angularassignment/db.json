@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstname": "Sanskriti",
+      "lastname": "Gupta",
+      "address": "near free ganj Bhind, Bhind M.P.",
+      "dob": "2021-07-24",
+      "mobile": "8965478965",
+      "city": "bhople"
+    },
+    {
+      "id": 2,
+      "firstname": "Nilesh",
+      "lastname": "df",
+      "address": "Gwalior",
+      "dob": "2021-07-09",
+      "mobile": "9876541235",
+      "city": "bhind"
+    },
+    {
+      "id": 3,
+      "firstname": "Naveed",
+      "lastname": "Tabrez",
+      "address": "mumbai",
+      "dob": "2021-07-10",
+      "mobile": "9325557373",
+      "city": "Mumbai"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
