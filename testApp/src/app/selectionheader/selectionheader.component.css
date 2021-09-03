@@ -1,0 +1,10 @@
+.bg-img{
+    background: url('src/assets/images/cabbg.JPG');
+    
+    background-color: rgba(10, 10, 10, 0.7);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+      
+  }

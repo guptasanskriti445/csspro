@@ -1,0 +1,150 @@
+
+
+<div class="container-fluid sticky-top p-0 ">
+
+<nav class=" navbar-expand-lg navbar-light bg-white align-items-center py-1">
+  
+    <a [routerLink]="['']"><img class="img-fluid py-0" src="assets/images/logo.png" alt=""></a>
+    
+    <div class="float-right  sidebar_bg ">
+        <div class="collapse navbar-collapse bg_color " id="navbarNavAltMarkup">
+          
+            <div class="navbar-nav text-dark p-2  ">
+              <div class="d-block d-sm-block d-md-block d-lg-none d-xl-none nav-item">
+                <button class="navbar-toggler float-right text_btn_color" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> X </button>
+              </div>
+              <a class="nav-item nav-link text_color" data-toggle="modal" data-target="#contactUsmodal"><i class="fas fa-phone-alt "> 9730694559</i></a>
+              <a class="nav-item nav-link text_color" [routerLink]="['/loginpartner']">LOG IN PARTENER</a>
+              <a class="nav-item nav-link text_color"[routerLink]="['/addtaxi']">ATTACH YOUT TAXI</a>
+              <a class="nav-item nav-link text_color" href="#">BLOG</a>
+              <a class="nav-item nav-link text_color" href="#" data-toggle="modal" data-target="#contactUsmodal">CONTACT</a>
+              <a class="nav-item nav-link text_color" href="#" data-toggle="modal" data-target="#signUpmodalCenter">SIGN IN</a>
+
+            </div>
+          </div>
+    </div>
+    
+    <button class="navbar-toggler float-right " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+         <!-- <button type="button" class="btn float-right pt-3"  data-toggle="modal" data-target="#contactUsmodal">
+          <i class="fas fa-phone-alt ">9730694559</i>
+    </button> -->
+     
+
+  </nav>
+
+</div>
+
+<!-- contact popup start -->
+  <!-- Modal -->
+  <div class="modal fade" id="contactUsmodal" tabindex="-1" role="dialog" aria-labelledby="contactUsmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="contactUsmodalLabel">CONTACT US</h6>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+              <small> New Booking:</small>
+              <div>
+                <a href="#"> +91 9730694559</a>
+              </div>
+          </div>
+          <div class="text-center">
+            <small>Existing Booking:</small>
+            <div>
+              <a href="#"> +91 9730694559</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <small> Partner Helpline:</small>
+            <div>
+              <a href="#"> +91 9730694559</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <small>Attach Your Taxi::</small>
+            <div>
+              <a href="#"> +91 8698511512</a>
+            </div>
+        </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+<!-- contact popup end -->
+
+<!-- sign up form popup start -->
+  <!-- Modal -->
+  <div class="modal fade" id="signUpmodalCenter" tabindex="-1" role="dialog" aria-labelledby="signUpmodalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+       
+        <div class="modal-body">
+          <h3 *ngIf='message'>{{message}}</h3>
+            <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="row">
+              <div class="col-md-6">
+                <form class="form-signin p-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()" method="POST">
+                   <div class="p-2">
+                    <button class="btn btn-google btn-block " type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+                    <button class="btn btn-facebook btn-block" type="submit"><i class="fab fa-facebook-square fa-lg mr-2"></i> Sign in with Facebook</button>
+                   </div>
+                   <div class="text-center m-2">
+                       <h5>OR</h5>
+                   </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email address</label>
+                      <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  formControlName="email"  autocomplete="off">
+                      <div class="error text-danger" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched"> Please enter email address.</div>
+                    </div>
+      
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" autocomplete="off">
+                      <div class="error  text-danger" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"> Please enter email address.</div>
+
+                    </div>
+                    <div class="form-group text-right">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                  <div class="text-center m-2 ">
+                    <button class="btn  btn-dark text-uppercase" [disabled]="loginForm.invalid" >Log in</button>
+                    <div *ngIf="invalidLogin" class="error">
+                          <div>Invalid user and passowrd. Please try again</div>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                      <h6>New to Ococabs? <a [routerLink]="['/signUp']"> Sign up</a></h6>
+                  </div>
+                  </form>
+              </div>
+              <div class="col-md-6 bgcolor text-center text-white">
+                  <h2 class=" p-4">Ococabs</h2>
+                  <div class="mb-5 mt-5">
+                    <h5 >Download The App</h5>  
+                       <div>
+                        <img class="img-fluid rounded m-1" src="assets/images/googlepayimg.JPG" alt="" style="width: 8rem;">
+                        <img class="img-fluid rounded m-1" src="assets/images/appstoreimg.JPG" alt="" style="width: 8rem;">
+                       </div>
+                  </div>
+                  <div class="mb-5 mt-5">
+                      <h4>Leader in outstation Taxi</h4>
+                      <strong>Available in 3000+ cities across India</strong>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!-- sign up form popup end -->

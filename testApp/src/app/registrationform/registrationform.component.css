@@ -1,0 +1,11 @@
+label{
+  font-size: 1.2rem;
+}
+.btn-google{
+    background: rgb(233, 50, 50);
+    color: white;
+  }
+  .btn-facebook{
+    background: rgb(17, 127, 174);
+    color: white;
+  }

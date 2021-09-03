@@ -1,0 +1,43 @@
+
+.navbar-light .navbar-nav .nav-link:hover{
+  color: rgb(215 177 24) !important;
+}
+.nav-link{
+  color: black !important;
+}
+@media only screen and (max-width: 992px ) {
+  .sidebar_bg{
+    position: absolute;
+    top: 0; 
+    right: 0;
+    width: 15rem;
+  z-index: 100;
+ 
+  }
+  .bg_color{
+    background:  #343a40 ;
+    
+  }
+  .text_color, .text_btn_color{
+    color: white !important;
+  }
+  .text_color:hover{
+    color: rgb(215 177 24) !important;
+  }
+}
+
+
+a{
+  text-decoration: none;
+}
+.bgcolor{
+  background-image: linear-gradient(to bottom right, rgb(5, 5, 5), rgb(181, 160, 7));
+}
+.btn-google{
+  background: rgb(233, 50, 50);
+  color: white;
+}
+.btn-facebook{
+  background: rgb(17, 127, 174);
+  color: white;
+}

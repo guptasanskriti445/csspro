@@ -1,0 +1,72 @@
+<app-header></app-header>
+<div class="bg-dark p-1">
+    <h3 class="text-white">Add Partner</h3>
+</div>
+<div class="container-fluid">
+    <div class="row align-items-center bg-light p-2">
+        <div class="col-md-6 mx-auto">
+        <div class="bg-white p-3">
+            <form action="" [formGroup]="addpartnersForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter Name" name="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && addpartnersForm.controls.name.errors }">
+                    <div *ngIf="submitted && addpartnersForm.controls.name.errors" class="text-danger">
+                        <div *ngIf="addpartnersForm.controls.name.errors.required">
+                        Name is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNo">Phone Number </label>
+                    <input type="text" id="phoneNo" class="form-control" placeholder="Enter phone number"  name="phoneNo" formControlName="phoneNo"  [ngClass]="{ 'is-invalid': submitted && addpartnersForm.controls.phoneNo.errors }">
+                    <div *ngIf="submitted && addpartnersForm.controls.phoneNo.errors" class="text-danger">
+                        <div *ngIf="addpartnersForm.controls.phoneNo.errors.required">
+                        Phone Number is required
+                        </div>
+                        <div *ngIf="addpartnersForm.controls.phoneNo.errors.pattern">
+                        Only number type
+                        </div>
+                        <div *ngIf="addpartnersForm.controls.phoneNo.errors.maxlength">
+                        max length 10 characters
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter Email Id"  name="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && addpartnersForm.controls.email.errors }">
+                    <div *ngIf="submitted && addpartnersForm.controls.email.errors" class="text-danger">
+                        <div *ngIf="addpartnersForm.controls.email.errors.required">
+                        Email is required
+                        </div>
+                        <div *ngIf="addpartnersForm.controls.email.errors.email">
+                        Write email address
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city">What city do you do most business in</label>
+                    <input type="text" id="city" class="form-control" placeholder="Select City" name="city" formControlName="city" [ngClass]="{ 'is-invalid': submitted && addpartnersForm.controls.city.errors }">
+                    <div *ngIf="submitted && addpartnersForm.controls.city.errors" class="text-danger">
+                        <div *ngIf="addpartnersForm.controls.city.errors.required">
+                        City is required
+                        </div>
+                    </div>
+                </div>
+                 <div class="form-group">
+                     <label for="password">Password</label>
+                     <input type="text" id="password" name="password" class="form-control" placeholder="Enter Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && addpartnersForm.controls.password.errors }">
+                     <div *ngIf="submitted && addpartnersForm.controls.password.errors" class="text-danger">
+                        <div *ngIf="addpartnersForm.controls.password.errors.required">
+                        Password is required
+                        </div>
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark">Save</button>
+                </div>
+        </form>
+          </div>
+        </div>
+        </div>
+</div>
+  

@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="bg-dark p-1">
+    <h2 class="text-white">Sing Up</h2>
+</div>
+<!-- <h2 class="text-center">Registration</h2> -->
+<div class="row bg-light">
+
+<div class="col-md-6 mx-auto">
+<div class="bg-white">
+   <div class="text-center">
+     <h2>Sign Up to Ococabs</h2>
+     <div>Already on Ococabs?
+         <a href="">Log In</a>
+     </div>
+   </div>
+   <div class="pl-5 pr-5 pb-2 pt-3">
+    <button class="btn btn-google btn-block " type="submit"><i class="fab fa-google mr-2"></i> Connect with Google</button>
+    <button class="btn btn-facebook btn-block" type="submit"><i class="fab fa-facebook-square fa-lg mr-2"></i> Connect with Facebook</button>
+   </div> 
+   <div class="p-2 text-center">
+       <h2>OR</h2>
+   </div>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" autocomplete="off" method="POST" >
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" name="name" id="name" formControlName="name" autocomplete="off" class="form-control input-sm" placeholder="Name" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.name.errors }">
+    <div *ngIf="submitted && registerForm.controls.name.errors" class="text-danger">
+        <div *ngIf="registerForm.controls.name.errors.required">
+        Name is required
+        </div>
+    </div>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" name="email" id="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email"  [ngClass]="{ 'is-invalid': submitted && registerForm.controls.email.errors }">
+    <div *ngIf="submitted && registerForm.controls.email.errors" class="text-danger">
+        <div *ngIf="registerForm.controls.email.errors.required">
+        Email is required
+        </div>
+        <div *ngIf="registerForm.controls.email.errors.email">
+        Write email address
+        </div>
+    </div>
+</div>
+<div class="form-group">
+<label for="mobileNo">Mobile Number</label>
+<input type="text" name="mobileNo" id="mobileNo" formControlName="mobileNo" autocomplete="off" class="form-control input-sm" placeholder="Mobile Number"  [ngClass]="{ 'is-invalid': submitted && registerForm.controls.mobileNo.errors }">
+    <div *ngIf="submitted && registerForm.controls.mobileNo.errors" class="text-danger">
+        <div *ngIf="registerForm.controls.mobileNo.errors.required">
+        Mobile Number is required
+        </div>
+        <div *ngIf="registerForm.controls.mobileNo.errors.pattern">
+        Only number type
+        </div>
+        <div *ngIf="registerForm.controls.mobileNo.errors.maxlength">
+        max length 10 characters
+        </div>
+    </div>
+</div>
+<div class="form-group">
+<label for="password">Password</label>
+<input type="password" name="password" id="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+  
+</div>
+<button type="submit" class="btn btn-dark" >Register</button>
+</form>
+</div>
+</div>
+</div>

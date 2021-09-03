@@ -1,0 +1,57 @@
+<div  class="bg-img container-fluid row p-4 m-0 ">
+  <div class="col-md-8"></div>
+  <div class=" bg-white shadow col-md-4 float-right ">
+   
+<div class="container ">
+    <form action="" [formGroup]="searchForm" (ngSubmit)="onSubmit()" method="POST">
+        <div class="form">
+          <div class=" text-center form-group btn-group-toggle ">
+            <label class="btn btn-dark rounded-pill m-1 active">
+              <input type="radio"  name="trip_type" value="one_way" formControlName="trip_type" id="one_way" autocomplete="off"  checked> ONE-WAY
+            </label>
+            <label class="btn btn-dark rounded-pill m-1">
+              <input type="radio"  name="trip_type" value="day_rental"  formControlName="trip_type" id="day_rental" autocomplete="off" > DAY RENTAL
+            </label>   
+            <label class="btn btn-dark rounded-pill m-1">
+              <input type="radio" name="trip_type" value="round_trip" formControlName="trip_type" id="round_trip" autocomplete="off" > ROUND TRIP OR MULTI WAY
+            </label>
+          </div>
+            <div class="form-group ">
+                <label for="pickupCity">PickUp Point</label>
+                <select id="pickupCity" class="form-control" formControlName="pickupCity" name="pickupCity" >
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                </select>
+              </div>
+              <div class="form-group ">
+                <label for="destinationCity">Destination</label>
+                <select id="destinationCity"  class="form-control" name="destinationCity" formControlName="destinationCity" >
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Pune">Pune</option>
+                </select>
+              </div>
+              <div class="form-group ">
+                
+                <label for="journeyDate">JOURNEY DATE</label>
+                  <!-- <input type="text" id="journeyDate" placeholder="Datepicker" class="form-control" [bsConfig]=" datepickerConfig"   [bsValue]="bsValue" bsDatepicker> -->
+                  <input type="date" name="journeyDate" id="journeyDate" [(ngModel)]="currentday" class="form-control" formControlName="journeyDate">
+              </div>
+              <div class="form-group">
+                <label for="journeytime">JOURNEY TIME</label>
+                <input type="time" name="journeytime" id="journeytime" class="form-control" formControlName="journeytime">
+              </div>
+              <div class="form-group">
+                <label for="mobile_no">Mobile Number:</label>
+                <input type="text" name="mobile_no" id="mobile_no" class="form-control" formControlName="mobile_no">
+              </div>
+              
+              <div class="text-center pb-2">
+                <button type="submit" class="btn btn-dark " > FIND CAB</button>
+            </div>
+        </div>
+    </form>
+   
+</div>
+   
+</div>
+</div>

@@ -1,0 +1,94 @@
+.bg-themeblue{
+    background: url(src/assets/images/bg-login.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .bg-theme-color {
+    background: linear-gradient(to right, #5361a5, #5361a5);
+    color: white;
+    opacity: 1;
+  }
+  .middle .right {
+      height: 50px;
+      width: 25px;
+      border-radius: 50px 0 0 50px;
+      background: #5361a5;
+      position: absolute;
+      z-index: 9;
+      right: -2.81rem;
+      margin-top: auto;
+  }
+  .middle .left{
+      height: 50px;
+      width: 25px;
+      border-radius: 0 50px 50px 0;
+      background: #5361a5;
+      position: absolute;
+      z-index: 9;
+      left: -2.82rem;
+      margin-top: auto;
+  }
+  .middle{
+      min-height: 50px;
+      position: relative;
+  }
+  .justify-content-center{
+      height: 100vh !important;
+  }
+  .shadow {
+      box-shadow: 1px 5px 20px #5968a9 !important;
+  }
+  .wrap {
+      text-align: center;
+      margin: 20px;
+      position: relative;
+    }
+    .links {
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    .wrap:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      border-top: 1px solid #c2cce3;
+      background: #c2cce3;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    .dot {
+      width: 90px;
+      height: 90px;
+      border:solid 1px #c2cce3;
+      border-radius: 50%;
+    }
+    .border-dark {
+      border-color: #c2cce3 !important;
+    }
+    .fa-5x {
+      color: #c2cce3;
+      font-size: 40px !important;
+      position: relative;
+      top: 20px;
+    }
+    .div-login {
+      width: 400px;
+    }
+    .form-control {
+      border-color: #c2cce3;
+      background-color: #c2cce3;
+      border-left: 1px solid lightgray;
+      border-radius: 0.25rem;
+    }
+    .input-group-text {
+      border:0;
+      border-right: 1px solid lightgray !important;
+      background-color: #c2cce3;
+      color: #495057;
+      border-radius: 0;
+    }

@@ -1,0 +1,50 @@
+<IfModule mod_headers.c>
+
+ <FilesMatch "\.(js|css|xml|html|gz)$">
+  Header append Vary: Accept-Encoding
+ </FilesMatch>
+
+</IfModule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^/$    index.php    [L]
+
+RewriteRule ^forgot-password?$     user/forgot-password.php  [NC,L]
+
+#admin panel section
+RewriteRule ^admin?$    admin/index.php    [NC,L]
+RewriteRule ^admin/?$    admin/index.php    [NC,L]
+RewriteRule ^admin/login?$    admin/index.php    [NC,L]
+
+#teacher panel section
+RewriteRule ^teacher?$    teacher/login    [NC,L]
+RewriteRule ^teacher/?$    teacher/index.php    [NC,L]
+RewriteRule ^teacher/login?$    teacher/index.php    [NC,L]
+
+#employee panel section
+RewriteRule ^employee?$    employee/login    [NC,L]
+RewriteRule ^employee/?$    employee/index.php    [NC,L]
+RewriteRule ^employee/login?$    employee/index.php    [NC,L]
+RewriteRule ^register?$    employee/register    [NC,L]
+
+#parent panel section
+RewriteRule ^parent?$    parent/login    [NC,L]
+RewriteRule ^parent/?$    parent/index.php    [NC,L]
+RewriteRule ^parent/login?$    parent/index.php    [NC,L]
+
+RewriteRule ^employee/play-video/([A-Za-z0-9-\.\=]+)/([A-Za-z0-9-\.\=]+)/?$     employee/play-video.php?video=$1&employee=$2    [NC,L]
+
+#address ajax file
+RewriteRule ^myajax/?$     admin/query.php    [NC,L]
+
+RewriteRule ^live-lecture/([A-Za-z0-9-]+)/?$     https://live.supremecommerceclasses.online/$1    [NC,L]
+
+#ErrorDocument 404 siteurl
+
+#employee panel section
+RewriteRule ^/?$    login    [NC,L]
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+

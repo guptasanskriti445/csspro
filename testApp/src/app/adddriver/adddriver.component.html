@@ -1,0 +1,111 @@
+<app-partnerheader></app-partnerheader>
+<div class="bg-dark p-1">
+    <h3 class="text-white">Add Driver</h3>
+</div>
+<div class="container-fluid">
+    <div class="row align-items-center bg-light p-2">
+        <div class="col-md-6 mx-auto">
+        <div class="bg-white p-3">
+            <form action="" [formGroup]="adddriverForm" (ngSubmit)="onSubmit()">
+                         <div class="form-group">
+                             <label for="dname">Driver Name</label>
+                             <input type="text" id="dname" class="form-control" placeholder="Enter Name" name="dname" formControlName="dname" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.dname.errors }">
+                             <div *ngIf="submitted && adddriverForm.controls.dname.errors" class="text-danger">
+                                <div *ngIf="adddriverForm.controls.dname.errors.required">
+                                Driver Name is required
+                                </div>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label for="phoneNo">Phone Number </label>
+                             <input type="text" id="phoneNo" class="form-control" placeholder="Enter phone number" name="phoneNo" formControlName="phoneNo" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.phoneNo.errors }">
+                             <div *ngIf="submitted && adddriverForm.controls.phoneNo.errors" class="text-danger">
+                                <div *ngIf="adddriverForm.controls.phoneNo.errors.required">
+                                    Phone Number is required
+                                </div>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                            <label for="drivinglincence">Driving Lincence</label>
+                            <!-- <input type="text" id="drivinglincence" class="form-control" placeholder="Driving Lincence" name="drivinglincence" formControlName="drivinglincence" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.drivinglincence.errors }"> -->
+                            <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" id="drivinglincence"  accept="" class="custom-file-input"  name="drivinglincence" formControlName="drivinglincence" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.drivinglincence.errors }">
+                                  <label class="custom-file-label" for="drivinglincence">Choose file</label>
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && adddriverForm.controls.drivinglincence.errors" class="text-danger">
+                               <div *ngIf="adddriverForm.controls.drivinglincence.errors.required">
+                                   Driving Lincence is required
+                               </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="driverselfi">Driver Selfi</label>
+                            <!-- <input type="text" id="driverselfi" class="form-control" placeholder="Driver Selfi" name="driverselfi" formControlName="driverselfi" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.driverselfi.errors }"> -->
+                            <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" id="driverselfi"  accept="" class="custom-file-input"  name="driverselfi" formControlName="driverselfi" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.driverselfi.errors }">
+                                  <label class="custom-file-label" for="driverselfi">Choose file</label>
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && adddriverForm.controls.driverselfi.errors" class="text-danger">
+                               <div *ngIf="adddriverForm.controls.driverselfi.errors.required">
+                                Driver Selfi is required
+                               </div>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                             <label for="aadhar">Aadhar Number</label>
+                             <!-- <input type="text" id="aadhar" class="form-control" placeholder="Enter Aadhar Number" name="aadhar" formControlName="aadhar" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.aadhar.errors }"> -->
+                             <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" id="aadhar"  accept="" class="custom-file-input"  name="aadhar" formControlName="aadhar" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.aadhar.errors }">
+                                  <label class="custom-file-label" for="aadhar">Choose file</label>
+                                </div>
+                            </div>
+                             <div *ngIf="submitted && adddriverForm.controls.aadhar.errors" class="text-danger">
+                                <div *ngIf="adddriverForm.controls.aadhar.errors.required">
+                                    Aadhar Number is required
+                                </div>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label for="pancard">Pancard</label>
+                             <!-- <input type="text" id="pancard" class="form-control" placeholder="Enter Pancard Numberr" name="pancard" formControlName="pancard" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.pancard.errors }"> -->
+                             <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" id="pancard"  accept="" class="custom-file-input"  name="pancard" formControlName="pancard" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.pancard.errors }">
+                                  <label class="custom-file-label" for="pancard">Choose file</label>
+                                </div>
+                            </div>
+                             <div *ngIf="submitted && adddriverForm.controls.pancard.errors" class="text-danger">
+                                <div *ngIf="adddriverForm.controls.pancard.errors.required">
+                                    Pancard is required
+                                </div>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label for="policeveri">Police Verification</label>
+                             <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" id="policeveri"  accept="" class="custom-file-input"  name="policeveri" formControlName="policeveri" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.policeveri.errors }">
+                                  <label class="custom-file-label" for="policeveri">Choose file</label>
+                                </div>
+                            </div>
+                             <!-- <input type="text" id="policeveri" class="form-control" placeholder="Enter Police Verification Numberr" name="policeveri" formControlName="policeveri" [ngClass]="{ 'is-invalid': submitted && adddriverForm.controls.policeveri.errors }"> -->
+                             <div *ngIf="submitted && adddriverForm.controls.policeveri.errors" class="text-danger">
+                                <div *ngIf="adddriverForm.controls.policeveri.errors.required">
+                                    Police Verification is required
+                                </div>
+                             </div>
+                         </div>
+                 <div class="form-group">
+                     <button type="submit" class="btn btn-dark">Save</button>
+                 </div>
+            </form>
+          </div>
+        </div>
+        </div>
+</div>
+  

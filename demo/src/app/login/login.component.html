@@ -1,0 +1,74 @@
+<div class="container-fluid bg-themeblue">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-12 col-sm-12 col-lg-8 my-auto">
+      <div class="row">
+        <div class="col-md-6 my-auto">
+          <div class="text-center ">
+            <a><img class="img-fluid" src="assets/images/logo.487dd1e2.webp"  alt=""></a>
+          </div>
+        </div>        
+        <div class="col-md-6 ">
+          <div class="row h-100">
+            <div class="col-12 my-auto">
+              <div class="card shadow px-4 div-login">
+                <div class="card-body">
+                  <div class="text-center pb-2"> 
+                    <div class="wrap">
+                      <div class="links">
+                        <div class="dot align-items-center mx-auto bg-white">
+                          <i class="far fa-user fa-5x "></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <form [formGroup]="login"  autocomplete="off" method="" >
+                    <div class="form-group mb-0">
+                        <div class="input-group">
+                          <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </span>
+                          <input type="email" name="email" #e1 id="email" formControlName="email" autocomplete="off" class="form-control input-sm rounded-0" placeholder="EMAIL" [ngClass]="{ 'is-invalid': submitted && login.controls.email.errors }">
+                        </div>
+                        <div *ngIf="submitted && login.controls.email.errors" class="text-danger">
+                            <div *ngIf="login.controls.email.errors.required">
+                              Email is required
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="middle">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>             
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </span>
+                        <input type="password" name="password" #p2 formControlName="password" id="password" autocomplete="off" class="form-control input-sm  rounded-0" placeholder="PASSWORD" [ngClass]="{ 'is-invalid': submitted && login.controls.password.errors }">
+                        
+                      </div>
+                      <div *ngIf="submitted && login.controls.password.errors" class="text-danger">
+                        <div *ngIf="login.controls.password.errors.required">
+                          Password is required
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row p-2">
+                      <div class="col-md-6"><input type="checkbox" name="remember" id="remember"> Remember Me</div>
+                      <div class="col-md-6"> <a href="#">Forgot password</a></div>
+                    </div>
+                    <button type="submit" class="btn bg-theme-color btn-block rounded-0" [disabled]="login.invalid"  (click)="check(e1.value, p2.value)">Log In</button>
+                     <span class="text-danger mt-1">{{msg}}</span>
+                    <div *ngIf="invalidlogin" class="error text-danger">
+                      <div>Incorrect email or password. </div>
+                     </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

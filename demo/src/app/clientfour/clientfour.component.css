@@ -1,0 +1,19 @@
+.nav-tabs .nav-link {
+    color: #f5f6f7;
+    background-color: #5361A5;
+}
+
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color:  #f5f6f7;
+    background-color: #314369;
+    
+
+}
+
+thead{
+    color: #f5f6f7;
+    background-color:#5361A5;
+}
+.name-color{
+    color: #7B85BA;
+}

@@ -1,0 +1,137 @@
+<app-partnerheader></app-partnerheader>
+<div class="bg-dark p-1">
+    <h3 class="text-white">Add Taxi</h3>
+</div>
+<div class="container-fluid">
+    <div class="row  align-items-center bg-light p-2 ">
+        <div class="col-md-6 mx-auto">
+        <div class="bg-white p-3">
+           <form action="" [formGroup]="addtaxiForm" (ngSubmit)="onSubmit()">
+                      <div class="form-group">
+                          <label for="cartype">Car Type</label>
+                          <input type="text" id="cartype" class="form-control" placeholder="Enter Car Type" name="cartype" formControlName="cartype" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.cartype.errors }">
+                          <div *ngIf="submitted && addtaxiForm.controls.cartype.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.cartype.errors.required">
+                                Car Type is required
+                            </div>
+                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="fueltype">Fuel Type</label>
+                          <input type="text" id="fueltype" class="form-control" placeholder="Enter Fuel Type" name="fueltype" formControlName="fueltype" [ngClass]="{'is-invalid': submitted && addtaxiForm.controls.fueltype.errors}">
+                          <div *ngIf="submitted && addtaxiForm.controls.fueltype.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.fueltype.errors.required">
+                                Fuel Type is required
+                            </div>
+                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="passangercapacity"></label>
+                          <input type="text" id="passangercapacity" class="form-control" placeholder="Enter Passanger Capacity Type" name="passangercapacity" formControlName="passangercapacity" [ngClass]="{'is-invalid': submitted && addtaxiForm.controls.passangercapacity.errors}">
+                          <div *ngIf="submitted && addtaxiForm.controls.passangercapacity.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.passangercapacity.errors.required">
+                                Passanger Capacity is required
+                            </div>
+                            <div *ngIf="addtaxiForm.controls.passangercapacity.errors.pattern">
+                                Only number type
+                                </div>
+                         </div>
+                      </div>
+                     <div class="form-group">
+                         <label for="registrationCertificate">Registration Certificate</label>
+                         <input type="text" id="registrationCertificate"  class="form-control" placeholder="Registration Number"  name="registrationCertificate" formControlName="registrationCertificate" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.registrationCertificate.errors }">
+                         <div *ngIf="submitted && addtaxiForm.controls.registrationCertificate.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.registrationCertificate.errors.required">
+                                Registration Certificate is required
+                            </div>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="insurance">Insurance</label>
+                         <input type="text"  class="form-control" id="insurance" placeholder="Insurance" name="insurance" formControlName="insurance" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.insurance.errors }">
+                         <div *ngIf="submitted && addtaxiForm.controls.insurance.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.insurance.errors.required">
+                                Insurance is required
+                            </div>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="fitness">Fitness</label>
+                         <input type="text" id="fitness" class="form-control" placeholder="Fitness" name="fitness" formControlName="fitness" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.fitness.errors }">
+                         <div *ngIf="submitted && addtaxiForm.controls.fitness.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.fitness.errors.required">
+                                Fitness is required
+                            </div>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="permit">Permit</label>
+                        <!-- <input type="text" id="permit" class="form-control" placeholder="Permit" name="permit" formControlName="permit" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.permit.errors }"> -->
+                        <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" id="permit"  accept="" class="custom-file-input"  name="permit" formControlName="permit" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.permit.errors }">
+                              <label class="custom-file-label" for="permit">Choose file</label>
+                            </div>
+                        </div>
+                        <div *ngIf="submitted && addtaxiForm.controls.permit.errors" class="text-danger">
+                           <div *ngIf="addtaxiForm.controls.permit.errors.required">
+                               Permit is required
+                           </div>
+                        </div>
+                    </div>
+                
+                    
+                     <div class="form-group">
+                         <label for="puc">PUC</label>
+                         <!-- <input type="text" id="puc" class="form-control" placeholder="PUC" name="puc" formControlName="puc" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.puc.errors }"> -->
+                         <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" id="puc"  accept="" class="custom-file-input"  name="puc" formControlName="puc" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.puc.errors }">
+                              <label class="custom-file-label" for="puc">Choose file</label>
+                            </div>
+                        </div>
+                         <div *ngIf="submitted && addtaxiForm.controls.puc.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.puc.errors.required">
+                                PUC is required
+                            </div>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="carfrontimage">Car Front Image</label>
+                         <div class="input-group">
+                             <div class="custom-file">
+                             <input type="file" id="carfrontimage" name="file_upload" accept="" class="custom-file-input" name="carfrontimage" formControlName="carfrontimage" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.carfrontimage.errors }">
+                             <label class="custom-file-label" for="carfrontimage">Choose file</label>
+                             </div>
+                         </div>
+                         <div *ngIf="submitted && addtaxiForm.controls.carfrontimage.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.carfrontimage.errors.required">
+                                Car Front Image is required
+                            </div>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="carbackimage">Car Back Image</label>
+                         <div class="input-group">
+                             <div class="custom-file">
+                               <input type="file" id="carbackimage" name="file_upload" accept="" class="custom-file-input" name="carbackimage" formControlName="carbackimage" [ngClass]="{ 'is-invalid': submitted && addtaxiForm.controls.carbackimage.errors }">
+                               <label class="custom-file-label" for="carbackimage">Choose file</label>
+                             </div>
+                         </div>
+                         <div *ngIf="submitted && addtaxiForm.controls.carbackimage.errors" class="text-danger">
+                            <div *ngIf="addtaxiForm.controls.carbackimage.errors.required">
+                                Car Back Image is required
+                            </div>
+                         </div>
+                     </div>
+                
+             <div class="form-group">
+                 <button type="submit" class="btn btn-dark">Save</button>
+             </div>
+        </form>
+        </div>
+        </div>
+        
+        </div>
+</div>
+  

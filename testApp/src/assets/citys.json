@@ -1,0 +1,62 @@
+{"data": [
+    {
+        "id": 1,
+        "name": "Mumbai"
+        
+    },
+    {
+        "id": 2,
+        "name": "Thana"
+    },
+    {
+        "id": 3,
+        "name": "Ulhasnagar"
+    },
+    {
+        "id": 4,
+        "name": "Ambarnath"
+    },
+    {
+        "id": 5,
+        "name": "Bhiwandi"
+    },
+    {
+        "id": 6,
+        "name": "Kalyan"
+    },
+    {
+        "id": 7,
+        "name": "Pimpri"
+    },
+    {
+        "id": 8,
+        "name": "Pune"
+    },
+    {
+        "id": 9,
+        "name": "Nashik"
+    },{
+        "id": 10,
+        "name": "Pen"
+    },
+    {
+        "id": 11,
+        "name": "Patna"
+    },
+    {
+        "id": 12,
+        "name": "Gwalior"
+    },
+    {
+        "id": 13,
+        "name": "Indore"
+    },
+    {
+        "id": 14,
+        "name": "Bhopal"
+    },
+    {
+        "id": 15,
+        "name": "Delhi"
+    }
+]}
